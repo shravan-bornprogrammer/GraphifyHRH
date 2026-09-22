@@ -1,0 +1,29 @@
+# Core API
+fastapi>=0.111
+uvicorn[standard]>=0.30
+pydantic>=2.7
+python-multipart>=0.0.9
+python-dotenv>=1.0
+
+# Data + graph
+pandas>=2.2
+openpyxl>=3.1        # .xlsx read/write
+networkx>=3.3
+
+# NLP (extractor="spacy" / "both") — after installing, run:
+#   python -m spacy download en_core_web_sm
+spacy>=3.7
+
+# Optional: issue-phrase extraction (extractor="keybert" / "both")
+# and canonicalization (canonicalize=true). Comment out if you only
+# need extractor="spacy" or "none" — the API degrades gracefully.
+keybert>=0.8
+sentence-transformers>=3.0
+scikit-learn>=1.4
+
+# Optional: LLM backends for /api/graph/ask (pick what you use, set
+# LLM_PROVIDER accordingly; leave all commented + LLM_PROVIDER=none to
+# use the API purely for graph building + facts retrieval, no LLM calls)
+# ollama>=0.3
+# openai>=1.40
+# anthropic>=0.34
